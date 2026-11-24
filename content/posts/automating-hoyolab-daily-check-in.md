@@ -161,6 +161,6 @@ const today = new Intl.DateTimeFormat('en-CA', { timeZone: 'Asia/Shanghai' }).fo
 
 None of this would exist without [`sglkc/hoyolab-auto-daily`](https://github.com/sglkc/hoyolab-auto-daily), a clean, well-scoped script that got the hard parts right and left me a pleasant codebase to build on. Huge thanks to the maintainer for sharing it.
 
-My version, with Telegram support and the notification redesign, lives here: [`su-ekachai/hoyolab-auto-daily`](https://github.com/su-ekachai/hoyolab-auto-daily).
+My version, with Telegram support and the notification redesign, lives here: [`eakkz/hoyolab-auto-daily`](https://github.com/eakkz/hoyolab-auto-daily).
 
 The whole thing now runs itself at 6 a.m. and pings my phone when it's done. The best automation is the kind you forget is even there, right up until the one morning it tells you something went wrong.

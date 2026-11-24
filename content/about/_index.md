@@ -8,11 +8,6 @@ insert_anchor_links = "none"
 lang = 'en'
 title = "About Me"
 subtitle = "Data Engineer • Cat Lover • Tech Enthusiast"
-math = false
-mermaid = false
-copy = false
-comment = false
-reaction = false
 +++
 
 ![Haku, one of my seven cats](haku.jpg)
@@ -28,5 +23,5 @@ To be honest, I’m someone who gets bored pretty easily. One day I might be dee
 ### Connect with me
 
 *   [Resume](@/resume/_index.md)
-*   [GitHub](https://github.com/su-ekachai)
+*   [GitHub](https://github.com/eakkz)
 *   [LinkedIn](https://www.linkedin.com/in/ekachai1012/)
