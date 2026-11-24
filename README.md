@@ -4,7 +4,7 @@ Personal blog built with [Zola](https://www.getzola.org/) and the [Serene](https
 
 ## Tech Stack
 
-- **Static Site Generator:** Zola v0.22.1
+- **Static Site Generator:** Zola v0.23.6
 - **Theme:** Serene v5.6.3
 - **Deployment:** GitHub Pages (via `getzola/github-pages` action)
 - **Styling:** Catppuccin color palette (Latte/Mocha), Inter + JetBrains Mono
@@ -12,12 +12,12 @@ Personal blog built with [Zola](https://www.getzola.org/) and the [Serene](https
 
 ## Prerequisites
 
-- [Zola](https://www.getzola.org/documentation/getting-started/installation/) v0.22.1+
+- [Zola](https://www.getzola.org/documentation/getting-started/installation/) v0.23.6+
 
 ## Quick Start
 
 ```bash
-git clone --recurse-submodules https://github.com/su-ekachai/eakkz-blog.git
+git clone --recurse-submodules https://github.com/eakkz/eakkz-blog.git
 cd eakkz-blog
 zola serve
 ```
@@ -36,6 +36,8 @@ Open `http://127.0.0.1:1111` in your browser.
 │   └── resume/          # Resume page
 ├── templates/
 │   ├── _custom_css.html # Color theme overrides (Catppuccin)
+│   ├── _components/     # Tera components for content (figure, pdf_embed)
+│   ├── home.html        # Home override (subpath-safe "more" link)
 │   └── robots.txt       # SEO robots template
 ├── static/              # Static assets (images, icons)
 ├── themes/serene/       # Theme (git submodule)
@@ -67,10 +69,10 @@ Your content here.
 Deployment is fully automated. Push to `main` and GitHub Actions will:
 
 1. Check out the repo with submodules
-2. Build with Zola v0.22.1
+2. Build with Zola v0.23.6
 3. Deploy to GitHub Pages
 
-Live at: https://su-ekachai.github.io/eakkz-blog
+Live at: https://eakkz.github.io/eakkz-blog
 
 ## Updating the Theme
 

@@ -18,7 +18,7 @@ Hi, I’m **Ekachai** (Eakkz). Welcome to my unorganized blog!
 
 I’m a data engineer from Thailand who loves working with data, and—most importantly—taking care of my **7 cats**. 🐈
 
-{{ figure(src="haku.jpg", alt="Haku, one of my seven cats, sitting at home", caption="Meet Haku, one of the seven.") }}
+{{ <figure src="haku.jpg" alt="Haku, one of my seven cats, sitting at home" caption="Meet Haku, one of the seven." /> }}
 
 To be honest, I’m someone who gets bored pretty easily. One day I might be deep into **Data Engineering** and **Python**, and the next I might be obsessing over **Finance**, **Trading strategies**, or just the latest gadget I bought.
 

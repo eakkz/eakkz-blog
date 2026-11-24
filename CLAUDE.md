@@ -22,10 +22,11 @@ zola check              # Validate internal links
 | `content/resume/` | Resume page |
 | `templates/_custom_css.html` | Catppuccin color overrides and typography |
 | `templates/_head_extend.html` | Custom `<head>` injections |
-| `templates/shortcodes/` | Custom shortcodes (`figure`, `pdf_embed`) |
+| `templates/home.html` | Home override (subpath-safe "more" link); rebase on theme's copy when updating Serene |
+| `templates/_components/` | Tera components used in content (`figure` overrides Serene's, `pdf_embed`) |
 | `themes/serene/` | Theme (git submodule, do NOT edit directly) |
 | `.github/workflows/deploy.yml` | GitHub Actions deployment |
-| `static/` | Images, icons, generated CSS |
+| `static/` | Images, icons, resume PDF |
 
 ## Content Conventions
 
@@ -48,10 +49,10 @@ comment = true     # enable comments (if configured)
 
 ### Images & assets
 
-- **Post/page images — colocate them.** Promote a flat post to a page bundle on its first image: `content/posts/<slug>/index.md` with the image beside it (URL unchanged). Embed with the `figure` shortcode (build-time `resize_image`, lazy-loaded, optional caption):
+- **Post/page images — colocate them.** Promote a flat post to a page bundle on its first image: `content/posts/<slug>/index.md` with the image beside it (URL unchanged). Embed with the `figure` component (build-time `resize_image`, lazy-loaded, optional caption):
 
   ```
-  {{ figure(src="photo.jpg", alt="description", caption="optional", width=1000) }}
+  {{ <figure src="photo.jpg" alt="description" caption="optional" width={1000} /> }}
   ```
 
   Plain `![alt](photo.jpg)` also works (e.g. on a section's `_index.md`). Commit the full-res original; the displayed size is derived at build.
@@ -90,7 +91,7 @@ The theme is a git submodule at `themes/serene/`.
 
 Push to `main` triggers GitHub Actions:
 1. Checkout with `submodules: recursive`
-2. Build with Zola v0.22.1 (`getzola/github-pages@v1`)
+2. Build with Zola v0.23.6 (`getzola/github-pages@v1`)
 3. Deploy via `actions/deploy-pages@v4`
 
 GitHub Pages source must be set to "GitHub Actions" in repo settings.
@@ -100,5 +101,6 @@ GitHub Pages source must be set to "GitHub Actions" in repo settings.
 - **Subpath:** `base_url` includes `/eakkz-blog`. Never use root-absolute paths for assets or internal links (`/img/…`, `/resume`) — they 404 in production. Use colocated relative paths, `@/file.md` internal links, or `get_url(path=…)` in templates.
 - `minify_html` is intentionally `false` — enabling it breaks some theme styles
 - `build_search_index` is `false` — search is temporarily unsupported by Serene
-- Highlighting uses `style = "class"` with giallo (auto-generates `giallo-light.css`/`giallo-dark.css` in `static/`)
+- Highlighting uses `style = "class"` with giallo (Zola writes `giallo-light.css`/`giallo-dark.css` straight into the output dir; don't commit them to `static/`)
 - The `public/` directory is gitignored — it's a build artifact
+- **Content is a Tera template** (Zola 0.23+): literal `{{`/`{%` in a post (e.g. GitHub Actions `${{ }}` in a code block) must be wrapped in `{% raw %}…{% endraw %}`, or the build fails. Components can't be nested inside list items.

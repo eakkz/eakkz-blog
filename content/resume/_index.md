@@ -10,11 +10,6 @@ lang = 'en'
 title = "Resume"
 subtitle = "Senior Data Engineer · Bangkok, Thailand"
 
-math = false
-mermaid = false
-copy = false
-comment = false
-reaction = false
 +++
 
-{{ pdf_embed() }}
+{{ <pdf_embed /> }}

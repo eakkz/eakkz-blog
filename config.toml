@@ -1,5 +1,5 @@
 # The URL the site will be built for
-base_url = "https://su-ekachai.github.io/eakkz-blog"
+base_url = "https://eakkz.github.io/eakkz-blog"
 
 # Whether to automatically compile all Sass files in the sass directory
 compile_sass = true
@@ -9,7 +9,7 @@ build_search_index = false
 
 
 title = "Eakkz Ekachai"
-description = "xxxx xxxx xxxx"
+description = "I'm Ekachai, a data engineer in Bangkok. I write about databases, automation, coding agents, gaming, and my seven cats."
 default_language = "en"
 theme = "serene"
 output_dir = "public"
@@ -38,19 +38,31 @@ anchors = "on"
 
 [extra]
 # Put all your custom variables here
-sections = [
-  { name = "posts", path = "/posts", is_external = false },
-  { name = "about", path = "/about", is_external = false },
-  { name = "resume", path = "/resume", is_external = false },
-  # { name = "tags", path = "/tags", is_external = false },
-  # { name = "github", path = "https://github.com/<your-username>", is_external = true },
+nav = [
+  { name = "posts", path = "/posts" },
+  { name = "about", path = "/about" },
+  { name = "resume", path = "/resume" },
+  # { name = "tags", path = "/tags" },
+]
+
+# Home page info; comment out handle/bio/avatar to hide them
+name = "Ekachai Suriyakriengkri"
+handle = "eakkz"
+bio = "🐱 Cat person | 🎮 Gamer | ✈️ Traveler | 🍜 Ramen enthusiast"
+avatar = "img/avatar.jpg"
+links = [
+  { name = "GitHub", icon = "github", url = "https://github.com/eakkz" },
+  { name = "Linkedin", icon = "linkedin", url = "https://www.linkedin.com/in/ekachai1012/" },
+  { name = "Email", icon = "email", url = "mailto:ekachai.suriya@gmail.com" },
 ]
 blog_section_path = "/posts"
 
 back_link_text = "Back" # Text of the back button
-force_theme = false # false | "light" | "dark"
+color_scheme = "auto" # "auto" | "light" | "dark"
+og_image = "img/avatar.jpg" # default link-preview image (Open Graph)
+date_format = "%Y-%m-%d" # site-wide; a section or post can override
 
-footer_copyright = "© 2025 Eakkz"
+footer_copyright = "© 2026 Eakkz"
 footer_credits = true # Whether to show "Built with zola and serene" in footer
 
 not_found_error_text = "404 Not Found"

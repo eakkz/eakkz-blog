@@ -22,7 +22,7 @@ Skipping the speech was worse. I once asked a bare agent for a research note and
 
 So the choice was repeating myself forever or trusting output I had already caught lying. I wanted my rules written down once, versioned, and loaded automatically into every session. That's exactly what Agent Skills are for, so I published my own catalog:
 
-> **[github.com/su-ekachai/skills](https://github.com/su-ekachai/skills)**: my writing and analysis standards, packaged as Agent Skills anyone can install.
+> **[github.com/eakkz/skills](https://github.com/eakkz/skills)**: my writing and analysis standards, packaged as Agent Skills anyone can install.
 
 ## The skills I use in my workflow
 
@@ -52,7 +52,7 @@ The writing skills guard how I sound. The finance skills encode how I evaluate. 
 The part I underestimated is what publishing the catalog as a repo buys. Everything installs with one line:
 
 ```bash
-npx skills@latest add su-ekachai/skills
+npx skills@latest add eakkz/skills
 ```
 
 On a new laptop, that command restores my entire standard in seconds. And the installer targets the shared `~/.agents/skills/` directory, then links each tool to it, so the same catalog serves every coding agent I run: Claude Code, Codex, opencode, and Antigravity. That works because Agent Skills is an open standard rather than one vendor's feature. I dropped one CLI for another this year and my skills didn't notice.

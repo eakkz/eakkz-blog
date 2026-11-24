@@ -1,8 +1,6 @@
-{%- set file = file | default(value="resume.pdf") -%}
+{#- Resume card + inline PDF viewer. Usage in markdown: {{ <pdf_embed /> }} -#}
+{% component pdf_embed(file: string = "resume.pdf", download_name: string = "Ekachai-Resume.pdf", title: string = "Résumé", meta: string = "PDF") -%}
 {%- set url = get_url(path=file) -%}
-{%- set name = download_name | default(value="Ekachai-Resume.pdf") -%}
-{%- set title = title | default(value="Résumé") -%}
-{%- set meta = meta | default(value="PDF") -%}
 <div class="resume">
   <div class="resume-card">
     <div class="resume-card__head">
@@ -13,7 +11,7 @@
       </div>
     </div>
     <div class="resume-actions">
-      <a class="resume-btn resume-btn--primary" href="{{ url | safe }}" download="{{ name }}" aria-label="Download résumé (PDF)">
+      <a class="resume-btn resume-btn--primary" href="{{ url | safe }}" download="{{ download_name }}" aria-label="Download résumé (PDF)">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
         Download
       </a>
@@ -30,3 +28,4 @@
   </object>
   <p class="resume-note">The inline preview works best on desktop — on mobile, use Download or Open in new tab.</p>
 </div>
+{%- endcomponent pdf_embed %}
